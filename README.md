@@ -2,4 +2,4 @@
 The crawler of the Scientific Assistant
 
 The last version of this interface is:
-- version = "1.0.0"
+- version = "1.0.1"

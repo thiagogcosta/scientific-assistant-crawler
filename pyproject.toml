@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "scientific_crawler_assitant"
-version = "1.0.0"
+version = "1.0.1"
 description = "A Scientific Crawler Assistant"
 authors = ["Thiago Costa <thiago.gcosta@alumni.usp.br>"]
 maintainers = ["Thiago Costa <thiago.gcosta@alumni.usp.br>"]
