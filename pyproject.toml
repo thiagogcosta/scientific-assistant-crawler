@@ -1,0 +1,79 @@
+[tool.poetry]
+name = "scientific_crawler_assitant"
+version = "1.0.0"
+description = "A Scientific Crawler Assistant"
+authors = ["Thiago Costa <thiago.gcosta@alumni.usp.br>"]
+maintainers = ["Thiago Costa <thiago.gcosta@alumni.usp.br>"]
+readme = "README.md"
+license = "MIT"
+keywords = ["scientific crawler assistant", "docker image",]
+classifiers = [
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4.0"
+pyyaml = "6.0"
+webdriver_manager = "3.8.6"
+selenium = "4.9.1"
+wget = "3.2"
+langchain = "0.1.16"
+langchain-community = "*"
+pypdf = "4.2.0"
+chromadbx = "0.0.5"
+chromadb-client = "0.5.13"
+asyncio = "*"
+onnxruntime = "1.19.0"
+sentence-transformers = "3.2.0"
+logfire = "*"
+
+[tool.poetry.dev-dependencies]
+pre-commit = "3.8.0"
+pytest = "8.3.3"
+pytest-cov = "5.0.0"
+
+#REF: https://pre-commit.com/
+#REF: https://stefaniemolin.com/articles/devx/pre-commit/setup-guide/
+#REF: https://medium.com/@pijpijani/smarter-commits-with-git-pre-commit-hooks-9c7bb3f699bf
+[tool.ruff]
+line-length = 88
+select = [
+    "C",  # mccabe rules
+    "F",  # pyflakes rules
+    "E",  # pycodestyle error rules
+    "W",  # pycodestyle warning rules
+    "B",  # flake8-bugbear rules
+    "I",  # isort rules
+]
+ignore = [
+    "C901",  # max-complexity-10
+    "E501",  # line-too-long
+]
+
+[tool.ruff.format]
+indent-style = "space"
+quote-style = "single"
+
+[tool.numpydoc_validation]
+checks = [
+    "all",  # report on all checks
+    "ES01", # but don't require an extended summary
+    "EX01", # or examples
+    "SA01", # or a see also section
+    "SS06", # and don't require the summary to fit on one line
+]
+exclude = [  # don't report on checks for these
+    '\\.__init__$',
+    '\\.__repr__$',
+    '\\.__str__$',
+]
+override_SS05 = [  # allow docstrings to start with these words
+    '^Process ',
+    '^Assess ',
+    '^Access ',
+]
